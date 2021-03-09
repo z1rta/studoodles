@@ -58,6 +58,8 @@ Variável Idade Tipo Inteiro
 
 Variável Velocidade Tipo Real
 
+_____________________________________________________________________________________________________________
+
 Operadores
 igual: ==
 
@@ -73,33 +75,40 @@ menor igual: <=
 
 maior igual: >=
 
-	- PARA (for): quando sabemos a quantidade de vezes que teremos que mostrar aquela informação (quantidade de repetições). 
+_____________________________________________________________________________________________________________
+
+- PARA (for): quando sabemos a quantidade de vezes que teremos que mostrar aquela informação (quantidade de repetições). 
+
 ex:
-for(var i = 0; i <= 10; i++)
+
+- for
+(var i = 0; i <= 10; i++)
 {
-        Console.WriteLine(i);
+  Console.WriteLine(i);
 }
-	- Repita / Enquanto (while): 
-ex:
+
+- Repita / Enquanto (while): 
+
 var cont = 0;
 
 while (cont < 10)
 {
-        Console.WriteLine("Beatriz");
-        cont++;
+  Console.WriteLine("Beatriz");
+  Cont++;
 }
-	- Repita até (do while): 
-ex:
+
+- Repita até (do while): 
+
 var cont = 0;
 
 do
 {
-        Console.WriteLine("Beatriz");
-        cont++;
+   Console.WriteLine("Beatriz");
+   cont++;
 }
 while(cont < 5)
 
-	- Para cada (foreach) - mais voltado para usar em vetores e matrizes.
+- Para cada (foreach) - mais voltado para usar em vetores e matrizes.
 
 {
      string[] nomes = new string { "Marcos", "Joaquim", "Amanda", "Marcela" }
@@ -110,8 +119,10 @@ while(cont < 5)
      }
  }
  
- Arrays
-	- Vetores (Array Simples): Estrutura que permite armazenar informações de forma ordenada/sequenciada. Permite criar uma lista de variáveis do mesmo tipo. Uma dimensão.
+_____________________________________________________________________________________________________________
+ 
+Arrays
+- Vetores (Array Simples): Estrutura que permite armazenar informações de forma ordenada/sequenciada. Permite criar uma lista de variáveis do mesmo tipo. Uma dimensão.
 ex:
 {
 string[] nomes= { "Maria", "Amanda", "Roberta", "Fernando" };
@@ -129,9 +140,10 @@ for(int i = 0; i < nomes.Length; i++)
         Console.WriteLine(nomes[i]);
  }
 }
-          Resposta: todos os nomes / "Length" mostra o comprimento, tudo o que consta dentro de "nomes".
 
-	- Matrizes (Array Composto): Estrutura encadeada de vetores. Permite criar uma lista de vetores do mesmo tipo. Tridimensional. Uma matriz, fisicamente, se parece com uma tabela, os elementos são acessados através de coordenadas (X;Y).
+Resposta: todos os nomes / "Length" mostra o comprimento, tudo o que consta dentro de "nomes".
+
+- Matrizes (Array Composto): Estrutura encadeada de vetores. Permite criar uma lista de vetores do mesmo tipo. Tridimensional. Uma matriz, fisicamente, se parece com uma tabela, os elementos são acessados através de coordenadas (X;Y).
 ex:
 string[,] nome: new string[3, 3];
 
@@ -157,31 +169,38 @@ for (int linha = 0; linha < 3; linha++)
 _____________________________________________________________________________________________________________
 
 Exercicios
+
 Faça um Programa que peça um número e então mostre a mensagem: O número informado foi [número]. 
+
 var numero = prompt("Digite um número")
     alert("Você digitou o número " + numero)
 
- Faça um Programa que converta metros para centímetros. (Dica: 1 metro = 100 centímetros)
+Faça um Programa que converta metros para centímetros. (Dica: 1 metro = 100 centímetros)
+
 var numerocen = prompt("Digite os centimetros")
 var resultado = numerocen / 100
     alert("Resultado:" + resultado + " Metros")
 
-Faça um Programa que converta centímetros para polegadas. (Dica: 1 centímetro = 0,393700787 polegadas) 
+Faça um Programa que converta centímetros para polegadas. (Dica: 1 centímetro = 0,393700787 polegadas)
+
 var centimetros = prompt("Digite os centimetros:")
 var resultado = centimetros * 0.393700787
     alert("O resultado é = " + resultado + " polegadas")
 
-Faça um Programa que peça o raio de um círculo, calcule e mostre sua área. Fórmula: Area = pi * raio² 
+Faça um Programa que peça o raio de um círculo, calcule e mostre sua área. Fórmula: Area = pi * raio²
+
 var raioCirculo = prompt("Digite o raio do circulo")
 var resultado = 3.14 * (raioCirculo * raioCirculo)
     alert("Resultado da área = " + resultado)
 
-Faça um Programa que peça a temperatura em graus Farenheit, transforme e mostre a temperatura em graus Celsius. Fórmula: Celsius = (5 * (Farenheit -32) / 9). 
+Faça um Programa que peça a temperatura em graus Farenheit, transforme e mostre a temperatura em graus Celsius. Fórmula: Celsius = (5 * (Farenheit -32) / 9)
+
 var temperaturaF = prompt("Digite a temperatura em Farenheit")
 var resultado = (5 * (temperaturaF -32) / 9)
     alert("Celsius" + resultado)
 
 Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+
 var Nota1 = parseFloat(prompt("Digite a nota 1"))
 var Nota2 = parseFloat(prompt("Digite a nota 2"))
 var Nota3 = parseFloat(prompt("Digite a nota 3"))
@@ -189,12 +208,14 @@ var Nota4 = parseFloat(prompt("Digite a nota 4"))
 resultado = (Nota1 + Nota2 + Nota3 + Nota4) / 4
     alert("Média = " + resultado)
 
-Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Farenheit. Fórmula : Farenheit = Celsius × 1,8 + 32 
+Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Farenheit. Fórmula : Farenheit = Celsius × 1,8 + 32
+
 var temperaturaC = prompt("Digite os Graus Celsius")
 var resultado = (temperaturaC * 1.8) + 32
     alert("F = " + resultado)
 
 Faça um Programa que peça o valor da gasolina e do álcool de um posto e diga qual é o combustível mais vantajoso abastecer, sabendo que somente é vantagem abastecer álcool se o preço do mesmo é menor ou igual a 70% do valor da gasolina.
+
 var gasolina = parseFloat(prompt("Preço da gasolina"))
 var alcool = parseFloat(prompt("Preço do álcool"))
 var resultado = (70 / 100) * gasolina
@@ -211,6 +232,7 @@ ________________________________________________________________________________
 Exercícios - Curso em vídeo
 
 4) Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório entre eles. 
+
 Algoritmo "soma"
 Var
        N1, N2, S: inteiro
@@ -224,6 +246,7 @@ Inicio
 Fimalgoritmo 
 
 5) Faça um programa que leia as duas notas de um aluno em uma matéria e mostre na tela a sua média na disciplina.
+
 Algoritmo "média"
 
 Var
@@ -239,6 +262,7 @@ Inicio
 Fimalgoritmo
 
 6) Faça um programa que leia um número inteiro e mostre o seu antecessor e seu sucessor.
+
 Algoritmo "ante/suce"
 
 Var
@@ -254,6 +278,7 @@ Inicio
 Fimalgoritmo
 
 7) Crie um algoritmo que leia um número real e mostre na tela o seu dobro e a sua terça parte.
+
 Algoritmo "exerc7"
 
 Var
@@ -269,6 +294,7 @@ Inicio
 Fimalgoritmo
 
 8) Desenvolva um programa que leia uma distância em metros e mostre os valores relativos em outras medidas. 
+
 Ex:  Digite uma distância em metros: 185.72 
 A distância de 85.7m corresponde a: 0.18572Km 1.8572Hm 18.572Dam 1857.2dm 18572.0cm 185720.0mm
 Algoritmo "exerc8"
@@ -316,6 +342,7 @@ Inicio
 Fimalgoritmo
 
 11) Desenvolva uma lógica que leia os valores de A, B e C de uma equação do segundo grau e mostre o valor de Delta.
+
 resultado = b * 2 - 4 * a * c
 Algoritmo "exerc8"
 
@@ -337,8 +364,10 @@ Fimalgoritmo
 13) Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o seu novo salário, com 15% de aumento.
 14) A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar, sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado.
 15) Crie um programa que leia o número de dias trabalhados em um mês e mostre o salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25 por hora trabalhada
----
-Aula 7 - Estruturas Condicionais 
+
+_____________________________________________________________________________________________________________
+
+Aula 7 (Curso em vídeo) - Estruturas Condicionais 
 
 Condicional Simples: Quando existe um bloco sendo executado caso uma expressão seja verdadeira.
 Se (x) entao
@@ -353,6 +382,7 @@ senao
 FimSe
 
 Exercícios: 
+
 algoritmo "QuantosAnos"
 var
       Nasc, Atual, ID: inteiro
@@ -369,7 +399,8 @@ inicio
          Escreval("não posso beber nos USA :(")
       FimSe
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "ParOuImpar"
 var
 N1: Inteiro
@@ -387,10 +418,12 @@ senao
    Escreval("Impar!")
 FimSe
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "IMC"
 var
 M, A, IMC: Real
+
 inicio
       Escreva("Digite sua massa (Kg): ")
       Leia(M)
@@ -404,7 +437,8 @@ inicio
            Escreval("Você não está no seu peso ideal.")
       FimSe
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "AptoDirigir"
 var
 anoA, anoN, ID: inteiro
@@ -429,7 +463,8 @@ senao
 FimSe
 Escreval("-----------------------")
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "media"
 var
 nomeA: caractere
@@ -457,8 +492,9 @@ senao
 FimSe
 Escreval("-------------------------")
 fimalgoritmo
----
-Aula 8 - Estruturas Condicionais 2
+_____________________________________________________________________________________________________________
+
+Aula 8 (Curso em vídeo) - Estruturas Condicionais 2
 
 Condicional aninhada: Quando há uma estrutura dentro da outra.
 Se (x) e (y) entao
@@ -487,6 +523,7 @@ Escolha D
       FimEscolha
 
 Exercícios: 
+
 algoritmo "médiaescolar"
 var
     N1, N2, N3, M: real
@@ -509,7 +546,8 @@ inicio
             fimse
        fimse
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "médiaescolar"
 var
 N1, N2, M: Real
@@ -529,7 +567,8 @@ inicio
             FimSe
        FimSe
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "IMC2"
 var
 M, A, IMC: Real
@@ -593,7 +632,8 @@ inicio
       FimEscolha
       Escreval("Sua doação foi de R$ ", Valor:5:2)
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "escolha"
 var
      Nome: Caractere
@@ -618,7 +658,8 @@ inicio
      FimEscolha
      Escreva("O novo salário de ", Nome," é: ", NSal)
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "Aproveitamento"
 var
     N1, N2, M: Real
@@ -660,7 +701,8 @@ inicio
       FimSe
       EscrevaL("------------------------------------")
 fimalgoritmo
----
+_____________________________________________________________________________________________________________
+
 algoritmo "Gols"
 var
 corn, sant, D: inteiro
@@ -691,8 +733,9 @@ senao
      FimSe
 FimSe
 fimalgoritmo
----
-Aula 9 - Estruturas de Repetição
+_____________________________________________________________________________________________________________
+
+Aula 9 (Curso em vídeo) - Estruturas de Repetição
 
 algoritmo "contador"
 var
@@ -709,6 +752,8 @@ inicio
     FimEnquanto
 fimalgoritmo
 
+_____________________________________________________________________________________________________________
+
 algoritmo "contador2"
 var
     cont, N, S: inteiro
@@ -723,6 +768,8 @@ inicio
     FimEnquanto
     Escreval("A soma de todos os valores é: ", S)
 fimalgoritmo
+
+_____________________________________________________________________________________________________________
 
 algoritmo "contador"
 var
@@ -748,6 +795,8 @@ inicio
     Escreval("O maior número é: ", maior)
     Escreval("O menor número é: ", menor)
 fimalgoritmo
+
+_____________________________________________________________________________________________________________
 
 algoritmo "conversor dólar"
 var
