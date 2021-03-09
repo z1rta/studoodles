@@ -1,5 +1,5 @@
 # studoodles
-Registrando meu estudos
+Registrando meu estudos iniciais em algoritmos
 
 Algoritmos
 São conjuntos de passos finitos e organizados que, quando executados, resolvem um determinado problema.
