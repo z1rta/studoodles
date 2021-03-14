@@ -868,3 +868,280 @@ inicio
            FimPara
       FimPara
 fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "SeqFibonacci"
+var
+  C, T1, T2, T3: inteiro
+inicio
+  T1 <- 0
+  Escreva(T1)
+  T2 <- 1
+  Escreva(T2)
+  Para C := 3 ate 15 faca
+       T3 := T1 + T2
+       Escreva(T3)
+       T1 := T2
+       T2 := T3
+  FimPara
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "AnalisadorDeValores"
+var
+  C, V, S, Di5, Nul, SomP: inteiro
+  M: real
+inicio
+      S <- 0
+      Di5 <- 0
+      Nul <- 0
+      SomP <- 0
+      Para C := 1 ate 5 faca
+           EscrevaL("Digite o ", C, "o. valor: ")
+           Leia(V)
+           S <- S + V
+           Se (V%5=0) entao
+              Di5 <- Di5 + 1
+           FimSe
+           Se (V=0) entao
+              Nul <- Nul +1
+           FimSe
+           Se (V%2=0) entao
+              SomP <- SomP + V
+           FimSe
+      FimPara
+      M <- S/(C-1)
+      EscrevaL("A soma entre os valores é: ", S)
+      EscrevaL("A média entre os valores é: ", M:5:1)
+      EscrevaL("Valores divisiveis por 5: ", Di5)
+      EscrevaL("Valores nulos: ", Nul)
+      EscrevaL("A soma dos valores pares é: ", SomP)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+- Aula 12 (Curso em vídeo) - Procedimentos
+algoritmo "MaisPesado"
+var
+   I: inteiro
+   O, Pes: caractere
+   P, Mai: real
+Procedimento Topo()
+inicio
+      LimpaTela
+      EscrevaL("---------------------------------------")
+      EscrevaL("---- D E T E C T O R  D E  P E S O ----")
+      EscrevaL("   O objeto mais pesado pesa, ", Mai, "Kg")
+      EscrevaL("---------------------------------------")
+FimProcedimento
+inicio
+      Topo()
+      Para I := 1 ate 5 faca
+           Escreva("Digite o objeto: ")
+           Leia(O)
+           Escreva("Digite o peso do ", O, ": ")
+           Leia(P)
+           Se (P>Mai) entao
+              Mai <- P
+              Pes <- O
+           FimSe
+           Topo()
+      FimPara
+      Topo()
+      EscrevaL("O objeto mais pesado foi: ", Pes, ", com ", Mai, "Kg.")
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "ProcPorValorSoma"
+var
+ X, Y: Inteiro
+Procedimento Soma(A, B: Inteiro)
+inicio
+      EscrevaL("Recebi o valor ", A)
+      EscrevaL("Recebi o valor ", B)
+      EscrevaL("A soma entre os valores é: ", A+B)
+FimProcedimento
+inicio
+      EscrevaL("Digite o primeiro valor: ")
+      Leia(X)
+      EscrevaL("Digite o segundo valor: ")
+      Leia(Y)
+      LimpaTela
+      Soma(X,Y)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "ProcParOuImpar"
+var
+  N: inteiro
+Procedimento ParOuImpar(V: inteiro)
+Inicio
+      Se (V%2=0) entao
+         EscrevaL("O número ", V, " é par!")
+      senao
+         EscrevaL("O número ", V, " é impar!")
+      FimSe
+FimProcedimento
+inicio
+      Escreva("Digite um número: ")
+      Leia(N)
+      ParOuImpar(N)
+fimalgoritmo
+
+ - **ESCOPO: É O LOCAL ONDE DETERMINADA VARIÁVEL IRÁ FUNCIONAR**
+ _____________________________________________________________________________________________________________
+ 
+ algoritmo "SomaParametrosRef"
+var
+  X, Y: Inteiro
+Procedimento Soma(var A, B: inteiro)
+Inicio
+      A <- A + 1
+      B <- B + 2
+      EscrevaL("Valor de A = ", A)
+      EscrevaL("Valor de B = ", B)
+      EscrevaL("A soma entre A e B = ", A+B)
+FimProcedimento
+inicio
+      X <- 4
+      Y <- 7
+      Soma(X, Y)
+      EscrevaL("Valor de X = ", X)
+      EscrevaL("Valor de Y = ", Y)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "Fibonacci"
+var
+  C, T1, T2, T3: inteiro
+Procedimento ProximoFibonacci(var A, B: inteiro)
+var C: inteiro
+inicio
+    C := A + B
+    Escreva(C)
+    A := B
+    B := C
+FimProcedimento
+inicio
+      T1 <- 0
+      Escreva(T1)
+      T2 <- 1
+      Escreva(T2)
+      Para C := 3 ate 10 faca
+           ProximoFibonacci(T1, T2)
+      FimPara
+fimalgoritmo
+_____________________________________________________________________________________________________________
+- Aula 13 (Curso em vídeo) - Funções
+
+algoritmo "SomaFuncao"
+var
+   V1, V2, S: inteiro
+funcao Soma(X, Y: inteiro):inteiro
+inicio
+   Retorne X + Y
+fimfuncao
+inicio
+   Escreva("Digite o primeiro valor: ")
+   Leia(V1)
+   Escreva("Digiten o segundo valor: ")
+   Leia(V2)
+   S <- Soma(V1, V2)
+   EscrevaL("A soma entre", V1, " e", V2, " é igual a:",S)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "FunParImpar"
+var
+N: inteiro
+R: caractere
+funcao ParOuImpar(V: inteiro) : caractere
+inicio
+    Se (V%2=0)entao
+       Retorne "PAR"
+    senao
+       Retorne "IMPAR"
+    fimse
+fimfuncao
+inicio
+      Escreva("Digite um número: ")
+      Leia(N)
+      R <- ParOuImpar(N)
+      Escreva("O número ", N, " é um valor ", R)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "FunFatorial"
+var
+N,F: inteiro
+funcao Fatorial(V: inteiro) : inteiro
+var C,R: inteiro
+inicio
+   R <- 1
+   Para C := 1 ate V faca
+       R<- R*C
+   Fimpara
+   Retorne R
+fimfuncao
+inicio
+      Escreva("Digite um número: ")
+      Leia(N)
+      F <- Fatorial(N)
+      EscrevaL("O valor de ",N,"! é igual a ", F)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "FunFibonacci"
+var
+  C, T1, T2, T3: inteiro
+funcao ProximoFibonacci(var N1, N2: inteiro):inteiro
+var
+N3: inteiro
+inicio
+    N3 := N1 + N2
+    N1 := N2
+    N2 := N3
+    Retorne N3
+fimfuncao
+inicio
+      T1 <- 0
+      Escreval(T1)
+      T2 <- 1
+      Escreval(T2)
+      Para C := 3 ate 10 faca
+           T3 <- ProximoFibonacci(T1, T2)
+           EscrevaL(T3)
+      FimPara
+fimalgoritmo
+
+- **FUNÇÕES PRÉ DEFINIDAS - VISUALG
+SITE: "BancoDeDados"
+
+Compr(Site)  12
+Copia(Site, 6, 2)  De
+Maiusc(Site)  BANCODEDADOS
+Minusc(Site)  bancodedados
+Pos("Dados", Site)  8
+Asc("b")  98 - código da letra
+Asc("B")  66
+Asc("C")  67
+Carac(67)  C
+
+algoritmo "AnalisadoStrings"
+var
+N: caractere
+C: inteiro
+inicio
+   Escreva("Digite seu nome: ")
+   Leia(N)
+   EscrevaL("Total de letras do seu nome: ", Compr(N))
+   EscrevaL("Seu nome em maiusculo: ", Maiusc(N))
+   EscrevaL("Seu nome em minusculo: ", Minusc(N))
+   EscrevaL("A primeira letra do seu nome é: ", Copia(N, 1,1))
+   EscrevaL("A ultima letra do seu nome é: ", Copia(Maiusc(N), Compr(N), 1))
+   EscrevaL("Posição da letra A no seu nome: ", Pos("A", Maiusc(N)))
+   EscrevaL("O código da letra B é: ", Asc("B"))
+   EscrevaL("O numero 43 se refere ao caractere ", Carac(43))
+   
+   Para C <- Compr(N) ate 1 passo -1 faca
+      Escreva(Copia(Maiusc(N), C,1))
+   FimPara
+fimalgoritmo
