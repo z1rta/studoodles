@@ -1145,3 +1145,168 @@ inicio
       Escreva(Copia(Maiusc(N), C,1))
    FimPara
 fimalgoritmo
+_____________________________________________________________________________________________________________
+- Aula 14 (Curso em vídeo) - Vetores
+
+algoritmo "TesteVetor"
+var
+  V: vetor[1..6] de inteiro
+  C: inteiro
+inicio
+  Para C <- 1 ate 6 faca
+       Escreva("Digite o ", C, "o. valor: ")
+       Leia(v[c])
+  FimPara
+  Para C <- 1 ate 6 faca
+       Escreva("{",v[c],"}")
+  FimPara
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "ValoresPares"
+var
+  val: vetor[1..7] de inteiro
+  ind, totpar: inteiro
+inicio
+   totpar <- 0
+   Para ind <- 1 ate 7 faca
+        Escreva("Digite o ", ind, "o. valor: ")
+        Leia(val[ind])
+        Se (val[ind]%2=0) entao
+            totpar <- totpar + 1
+        FimSe
+   FimPara
+   EscrevaL("O total de números pares digitados foram ", totpar)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "ValoresParesPosição"
+var
+  val: vetor[1..7] de inteiro
+  ind, totpar: inteiro
+inicio
+   totpar <- 0
+   Para ind <- 1 ate 7 faca
+        Escreva("Digite o ", ind, "o. valor: ")
+        Leia(val[ind])
+   FimPara
+   Para ind <- 1 ate 7 faca
+        Se (val[ind]%2=0) entao
+           totpar <- totpar + 1
+           EscrevaL("Valor PAR na Posição ", ind)
+        FimSe
+   FimPara
+   EscrevaL("** O total de números pares: ", totpar, " **")
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "TurmaA"
+var
+   nome: vetor[1..4] de caractere
+   n1: vetor[1..4] de real
+   n2: vetor[1..4] de real
+   m: vetor[1..4] de real
+   c, totA: inteiro
+   sm, mt: real
+inicio
+   Para c <- 1 ate 4 faca
+        EscrevaL("ALUNO ", c)
+        Escreva("Nome: ")
+        Leia(nome[c])
+        Escreva("Primeira nota: ")
+        Leia(n1[c])
+        Escreva("Segunda nota: ")
+        Leia(n2[c])
+        m[c] <- (n1[c]+n2[c])/2
+        sm <- sm + m[c]
+   FimPara
+   mt <- sm/4
+   LimpaTela
+   EscrevaL("Listagem de Alunos")
+   EscrevaL("------------------")
+   Para c <- 1 ate 4 faca
+        EscrevaL(nome[c]:15, m[c]:4:1)
+        Se (m[c] > mt) entao
+           totA <- totA + 1
+        FimSe
+   FimPara
+   EscrevaL("Ao todo, temos ", totA, " alunos que estão acima da média da turma, que é: ", mt:4:1)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "SoComR"
+var
+  nome: caractere
+  soR: vetor[1..10] de caractere
+  c, tot: inteiro
+inicio
+  tot <- 0
+  Para c <- 1 ate 10 faca
+     Escreva("Digite o ", c, "o. nome: ")
+     Leia(nome)
+     Se (copia(maiusc(nome), 1, 1) = "R") entao
+        tot <- tot + 1
+        soR[tot] <- nome
+     FimSe
+  FimPara
+  LimpaTela
+  EscrevaL("LISTAGEM FINAL")
+  Para c <- 1 ate tot faca
+     EscrevaL(soR[c])
+  FimPara
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "OrdenaVetor"
+var
+   vet: vetor[1..4] de inteiro
+   i,j, aux: inteiro
+inicio
+      Para i <- 1 ate 10 faca
+           Escreva("Digite um valor: ")
+           Leia(vet[i])
+      FimPara
+      
+      Para i <- 1 ate 9 faca
+           Para j <- i+1 ate 10 faca
+                Se (vet[i] > vet[j]) entao
+                    aux <- vet[i]
+                    vet[i] <- vet[j]
+                    vet[j] <- aux
+                FimSe
+           FimPara
+      FimPara
+      
+      Para i <- 1 ate 10 faca
+           Escreva("{",(vet[i]),"}")
+      FimPara
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "TimeXTime"
+var
+l, c: inteiro
+time: vetor[1..3] de caractere
+procedimento Topo()
+inicio
+   Escreval("---------------------")
+   Escreval("CAMPEONATO DE FUTEBOL")
+   Escreval("---------------------")
+fimprocedimento
+inicio
+   Topo()
+   Para c <- 1 ate 3 faca
+       Escreva("Nome do ", c, "o. time: ")
+       Leia(time[c])
+   FimPara
+   
+   LimpaTela
+   Topo()
+   Para l <- 1 ate 3 faca
+        Para c <- 1 ate 3 faca
+            Se (l <> c) entao
+                EscrevaL(time[l]:12, "[ ] x [ ] ", time[c]:12)
+            FimSe
+        FimPara
+   FimPara
+fimalgoritmo
