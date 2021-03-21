@@ -1401,7 +1401,7 @@ ________________________________________________________________________________
 algoritmo "MatrizPares"
 var
 mat: vetor[1..3, 1..3] de inteiro
-l,c, numP: inteiro
+l,c, totPar: inteiro
 inicio
     Para l <- 1 ate 3 faca
        Para c <- 1 ate 3 faca
@@ -1412,14 +1412,174 @@ inicio
     Escreval()
     Escreva("MATRIZ:")
     Escreval()
+    totPar <- 0
     Para l <- 1 ate 3 faca
        Para c <- 1 ate 3 faca
            Se(mat[l,c] % 2 = 0) entao
-              Escreva("{", mat[l,c]:4,"}")
+              totPar <- totPar + 1
+              Escreva("{", mat[l,c]:2,"}")
            senao
-              Escreva(mat[l,c]:6)
+              Escreva(mat[l,c]:4)
            FimSe
        FimPara
        Escreval()
     FimPara
+    Escreva("Existem ", totPar," números pares na matriz.")
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "MatrizIdentidade"
+var
+ mID: vetor[1..3, 1..3] de inteiro
+ i,j: inteiro
+inicio
+   Para i <- 1 ate 3 faca
+     Para j <- 1 ate 3 faca
+        Se (i = j) entao
+          mID[i,j] <- 1
+        senao
+          mID[i,j] <- 0
+        FimSe
+     FimPara
+   FimPara
+   
+   Para i <- 1 ate 3 faca
+     Para j <- 1 ate 3 faca
+        Escreva(mID[i,j])
+     FimPara
+     Escreval()
+   FimPara
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "Matriz4ª"
+var
+  m: vetor[1..4, 1..4] de inteiro
+  i, j, sDP, p2J, mai3J: inteiro
+inicio
+   sDP <- 0
+   p2J <- 1
+   Para i <- 1 ate 4 faca
+      Para j <- 1 ate 4 faca
+           Escreva("Digite o valor da posição [",i,",",j,"]: ")
+           Leia(m[i,j])
+           Se (i = j) entao
+              sDP <- sDP + m[i,j]
+           FimSe
+      FimPara
+   FimPara
+   LimpaTela
+   
+   Para i <- 1 ate 4 faca
+      Para j <- 1 ate 4 faca
+           Escreva(m[i,j]:4)
+      FimPara
+      Escreval()
+   FimPara
+   
+   Para j <- 1 ate 4 faca
+      p2J <- p2J * m[2,j]
+   FimPara
+   
+   Para i <- 1 ate 4 faca
+      Se (m[i,3] > mai3J) entao
+         mai3J <- m[i,3]
+   FimPara
+   
+   Escreval()
+   Escreval("A soma da diágonal principal é ", sDP)
+   Escreval("O produto dos valores da segunda linha é ", p2J)
+fimalgoritmo
+_____________________________________________________________________________________________________________
+
+algoritmo "MatrizEscolha"
+var
+  m: vetor[1..4, 1..4] de inteiro
+  i, j, Opc: inteiro
+  
+procedimento MostrarMatriz()
+inicio
+  Para i <- 1 ate 4 faca
+     Para j <- 1 ate 4 faca
+          Escreva(m[i,j]:4)
+     FimPara
+  Escreval()
+  FimPara
+fimprocedimento
+
+procedimento DiagonalPrincipal()
+var t: inteiro
+inicio
+  Para i <- 1 ate 4 faca
+     Escreval(m[i,i]:4)
+     Para t <- 1 ate i faca
+        Escreva("    ")
+     FimPara
+  FimPara
+fimprocedimento
+
+procedimento TrianguloSuperior()
+var t: inteiro
+inicio
+  Para i <- 1 ate 3 faca
+     Escreva("    ")
+     Para j <- i+1 ate 4 faca
+        Escreva(m[i,j]:4)
+     FimPara
+     Escreval()
+     Para t <- 1 ate i faca
+        Escreva("    ")
+     FimPara
+  FimPara
+  Escreval()
+fimprocedimento
+
+procedimento TrianguloInferior()
+inicio
+   Para j <- 1 ate 4 faca
+     Escreval()
+     Para i <- 1 ate j-1 faca
+        Escreva(m[i,j]:4)
+     FimPara
+   FimPara
+   Escreval()
+fimprocedimento
+
+inicio
+   Para i <- 1 ate 4 faca
+      Para j <- 1 ate 4 faca
+           Escreva("Digite o valor da posição [",i,",",j,"]: ")
+           Leia(m[i,j])
+      FimPara
+   FimPara
+   LimpaTela
+   
+   Repita
+     Escreval()
+     Escreval("MENU DE OPÇÕES: ")
+     Escreval("===================")
+     Escreval("[1] Mostrar a Matriz")
+     Escreval("[2] Diagonal Principal")
+     Escreval("[3] Triangulo Superior")
+     Escreval("[4] Triangulo Inferior")
+     Escreval("[5] Sair")
+     Repita
+       Escreval("====== OPÇÃO: ")
+       Leia(Opc)
+     Ate (Opc >=1) e (Opc <=5)
+     LimpaTela
+     
+     Escolha Opc
+       Caso 1
+         MostrarMatriz()
+       Caso 2
+         DiagonalPrincipal()
+       Caso 3
+         TrianguloSuperior()
+       Caso 4
+         TrianguloInferior()
+       Caso 5
+         Escreva("ENCERRANDO...")
+     FimEscolha
+   Ate (Opc = 5)
 fimalgoritmo
