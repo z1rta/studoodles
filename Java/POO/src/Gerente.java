@@ -20,8 +20,8 @@ public class Gerente extends Funcionario { //Gerente eh um funcionario
 		}
 	}
 	
-	public boolean autentica(String login, int senha) { 	// … criado uma nova vers„o de um metÛdo, no caso o autentica
-		if((this.login == login) && (this.senha == senha)) { // que variam na quantidade ou tipos de param. (SOBRECARGA!!)
+	public boolean autentica(String login, int senha) { 	// √â criado uma nova vers√£o de um met√≥do, no caso o autentica,
+		if((this.login == login) && (this.senha == senha)) { // que variam na quantidade ou tipos de parametros (SOBRECARGA!!)
 			return true;
 		} else {
 			return false;
@@ -33,8 +33,8 @@ public class Gerente extends Funcionario { //Gerente eh um funcionario
 	}
 	
 	public double getBonificacao() {
-		return super.getBonificacao() + super.getSalario(); // o super sÛ pode ser usado quando o atributo est· definido como "protected", 
-							  								//	sendo assim, sÛ sendo ussado pelos filhos da classe pai. (HERAN«A!!)
+		return super.getBonificacao() + super.getSalario(); // o super s√≥ pode ser usado quando o atributo est√° definido como "protected", 
+							  	   // sendo assim, s√≥ sendo usado pelas filhas da classe m√£e. (HERAN√áA!!)
 	}
 	
 }
