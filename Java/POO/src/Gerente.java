@@ -4,6 +4,10 @@ public class Gerente extends Funcionario { //Gerente eh um funcionario
 	private int senha;
 	private String login;
 	
+	public Gerente() { //Construtor
+		
+	}
+	
 	public void setLogin(String login) {
 		this.login = login;
 	}
@@ -26,10 +30,6 @@ public class Gerente extends Funcionario { //Gerente eh um funcionario
 		} else {
 			return false;
 		}
-	}
-	
-	public Gerente() { //Construtor
-		
 	}
 	
 	public double getBonificacao() {
